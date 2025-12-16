@@ -12,7 +12,7 @@ class MainController extends Controller
         return view('home');
     }
 
-    public function generateExercises(Request $request)
+    public function generateExercises(Request $request): View
     {
 
         // form validation
@@ -90,7 +90,7 @@ class MainController extends Controller
             ];
         }
 
-        // dd(json_encode($exercises));
+        return view('operations', ['exercises' => $exercises]);
     }
 
     public function printExercises()
